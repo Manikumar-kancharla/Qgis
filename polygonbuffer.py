@@ -2,7 +2,7 @@ import processing
 from qgis.core import QgsProject, QgsVectorLayer
 
 # Get your layer by its exact name
-layer = QgsProject.instance().mapLayersByName("inputlayer")[0]
+layer = QgsProject.instance().mapLayersByName("inputlayer")[0] #here paste your shapefile name
 
 # Buffer parameters
 params = {
@@ -23,3 +23,4 @@ print("Buffer saved at:", buffer_result['OUTPUT'])
 # Load result into map
 buffer_layer = QgsVectorLayer(buffer_result['OUTPUT'], "BufferLayer", "ogr")
 QgsProject.instance().addMapLayer(buffer_layer)
+
